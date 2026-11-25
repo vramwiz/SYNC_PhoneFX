@@ -56,35 +56,11 @@
                                           }
                                       ],
                           "uninstall":  [
-                                            {
-                                                "action":  "delete",
-                                                "path":  "{pluginsDir}/SYNC_PhoneFX/SYNC_PhoneFX.auf2"
-                                            },
-                                            {
-                                                "action":  "delete",
-                                                "path":  "{pluginsDir}/SYNC_PhoneFX/README.md"
-                                            },
-                                            {
-                                                "action":  "delete",
-                                                "path":  "{pluginsDir}/SYNC_PhoneFX/LICENSE"
-                                            },
-                                            {
-                                                "action":  "delete",
-                                                "path":  "{pluginsDir}/SYNC_PhoneFX/THIRD_PARTY_NOTICES.md"
-                                            },
-                                            {
-                                                "action":  "delete",
-                                                "path":  "{pluginsDir}/SYNC_PhoneFX/docs/home.png"
-                                            },
-                                            {
-                                                "action":  "delete",
-                                                "path":  "{pluginsDir}/SYNC_PhoneFX/docs/incoming.png"
-                                            },
-                                            {
-                                                "action":  "delete",
-                                                "path":  "{pluginsDir}/SYNC_PhoneFX/docs/notification.png"
-                                            }
-                                        ]
+                            {
+                              "action": "delete",
+                              "path": "{pluginsDir}/SYNC_PhoneFX"
+                            }
+                          ]
                       },
         "version":  [
                         {
