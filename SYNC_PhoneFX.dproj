@@ -89,13 +89,13 @@
         </DelphiCompile>
         <DCCReference Include="Source\Lib\AviUtl2FilterTypes.pas"/>
         <DCCReference Include="Source\Lib\FilterTable\PluginFilterTable.pas"/>
-        <DCCReference Include="..\AviUtl2Plugin\AviUtl2PluginLib\Lib\RTTIPersistent\RTTIPersistent.pas"/>
-        <DCCReference Include="..\AviUtl2Plugin\AviUtl2PluginLib\Lib\RTTIPersistent\RTTIPersistentIni.pas"/>
-        <DCCReference Include="..\AviUtl2Plugin\AviUtl2PluginLib\Lib\RTTIPersistent\RTTISectionPersistent.pas"/>
-        <DCCReference Include="..\AviUtl2Plugin\AviUtl2PluginLib\Lib\SectionFileManager\SectionFileManager.pas"/>
-        <DCCReference Include="..\AviUtl2Plugin\AviUtl2PluginLib\Lib\VectorRenderer\VectorRendererData.pas"/>
-        <DCCReference Include="..\AviUtl2Plugin\AviUtl2PluginLib\Lib\VectorRenderer\VectorRenderer.pas"/>
-        <DCCReference Include="..\AviUtl2Plugin\AviUtl2PluginLib\Lib\VectorRenderer\VectorRendererImageList.pas"/>
+        <DCCReference Include="Source\Lib\RTTIPersistent\RTTIPersistent.pas"/>
+        <DCCReference Include="Source\Lib\RTTIPersistent\RTTIPersistentIni.pas"/>
+        <DCCReference Include="Source\Lib\RTTIPersistent\RTTISectionPersistent.pas"/>
+        <DCCReference Include="Source\Lib\SectionFileManager\SectionFileManager.pas"/>
+        <DCCReference Include="Source\Lib\VectorRenderer\VectorRendererData.pas"/>
+        <DCCReference Include="Source\Lib\VectorRenderer\VectorRenderer.pas"/>
+        <DCCReference Include="Source\Lib\VectorRenderer\VectorRendererImageList.pas"/>
         <DCCReference Include="Source\Common\Images\SYNC_PhoneFX_CharacterIcons.pas"/>
         <DCCReference Include="Source\Common\Render\SYNC_PhoneFX_Renderer.pas"/>
         <DCCReference Include="Source\Common\Render\SYNC_PhoneFX_Graphics.pas"/>

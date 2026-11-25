@@ -8,13 +8,13 @@ library SYNC_PhoneFX;
 uses
   AviUtl2FilterTypes in 'Source\Lib\AviUtl2FilterTypes.pas',
   PluginFilterTable in 'Source\Lib\FilterTable\PluginFilterTable.pas',
-  RTTIPersistent in '..\AviUtl2Plugin\AviUtl2PluginLib\Lib\RTTIPersistent\RTTIPersistent.pas',
-  RTTIPersistentIni in '..\AviUtl2Plugin\AviUtl2PluginLib\Lib\RTTIPersistent\RTTIPersistentIni.pas',
-  RTTISectionPersistent in '..\AviUtl2Plugin\AviUtl2PluginLib\Lib\RTTIPersistent\RTTISectionPersistent.pas',
-  SectionFileManager in '..\AviUtl2Plugin\AviUtl2PluginLib\Lib\SectionFileManager\SectionFileManager.pas',
-  VectorRendererData in '..\AviUtl2Plugin\AviUtl2PluginLib\Lib\VectorRenderer\VectorRendererData.pas',
-  VectorRenderer in '..\AviUtl2Plugin\AviUtl2PluginLib\Lib\VectorRenderer\VectorRenderer.pas',
-  VectorRendererImageList in '..\AviUtl2Plugin\AviUtl2PluginLib\Lib\VectorRenderer\VectorRendererImageList.pas',
+  RTTIPersistent in 'Source\Lib\RTTIPersistent\RTTIPersistent.pas',
+  RTTIPersistentIni in 'Source\Lib\RTTIPersistent\RTTIPersistentIni.pas',
+  RTTISectionPersistent in 'Source\Lib\RTTIPersistent\RTTISectionPersistent.pas',
+  SectionFileManager in 'Source\Lib\SectionFileManager\SectionFileManager.pas',
+  VectorRendererData in 'Source\Lib\VectorRenderer\VectorRendererData.pas',
+  VectorRenderer in 'Source\Lib\VectorRenderer\VectorRenderer.pas',
+  VectorRendererImageList in 'Source\Lib\VectorRenderer\VectorRendererImageList.pas',
   SYNC_PhoneFX_CharacterIcons in 'Source\Common\Images\SYNC_PhoneFX_CharacterIcons.pas',
   SYNC_PhoneFX_Timeline in 'Source\Common\Effects\SYNC_PhoneFX_Timeline.pas',
   SYNC_PhoneFX_Graphics in 'Source\Common\Render\SYNC_PhoneFX_Graphics.pas',
@@ -23,7 +23,7 @@ uses
   SYNC_PhoneFX_FilterPlugin in 'Source\Plugin\Filter\SYNC_PhoneFX_FilterPlugin.pas';
 
 {$R *.res}
-{$R '..\AviUtl2Plugin\AviUtl2PluginLib\Serif\Chara\SerifCharaVectorResource.RES'}
+{$R 'Source\Lib\CharacterResources\SerifCharaVectorResource.RES'}
 
 function InitializePlugin(Version: Cardinal): Byte; cdecl;
 begin

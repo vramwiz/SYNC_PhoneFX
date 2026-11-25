@@ -13,3 +13,4 @@ Setup/.release-*.tmp
 *.dsk
 .DS_Store
 Win64/
+Setup/SYNC_PhoneFX.zip

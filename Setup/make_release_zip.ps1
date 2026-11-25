@@ -4,7 +4,7 @@
 )
 
 $ErrorActionPreference = 'Stop'
-$packageName = 'SYNC_MINE'
+$packageName = 'SYNC_PhoneFX'
 $projectDir = Split-Path -Parent $PSScriptRoot
 if (-not $ReleaseDirectory) { $ReleaseDirectory = Join-Path $projectDir 'Win64\Release' }
 $pluginName = "$packageName.auf2"
@@ -17,7 +17,7 @@ if (-not $XxhsumPath) {
     $XxhsumPath = Join-Path $projectDir 'Win64\Dependencies\xxHash-0.8.4\xxhsum.exe'
     if (-not (Test-Path -LiteralPath $XxhsumPath -PathType Leaf)) {
         $xxhsum = Get-Command xxhsum.exe -CommandType Application -ErrorAction SilentlyContinue
-        if (-not $xxhsum) { throw 'xxhsum.exe is required. See setup\README.md.' }
+        if (-not $xxhsum) { throw 'xxhsum.exe is required. See Setup\README.md.' }
         $XxhsumPath = $xxhsum.Source
     }
 }
@@ -29,11 +29,10 @@ $tempBase = Join-Path $PSScriptRoot ('.release-' + [guid]::NewGuid().ToString('N
 $tempPlugin = "$tempBase-plugin.tmp"
 $tempZip = "$tempBase-zip.tmp"
 $tempCatalog = "$tempBase-catalog.tmp"
-$tempNotices = "$tempBase-notices.tmp"
 $catalogBackup = "$tempBase-previous-catalog.tmp"
 
 Add-Type -AssemblyName System.IO.Compression, System.IO.Compression.FileSystem
-$lock = [Threading.Mutex]::new($false, 'Local\VRAMWIZ.SYNC_MINE.ReleaseZip')
+$lock = [Threading.Mutex]::new($false, 'Local\VRAMWIZ.SYNC_PhoneFX.ReleaseZip')
 $ownsLock = $false
 try {
     try { $ownsLock = $lock.WaitOne(0) }
@@ -56,17 +55,13 @@ try {
 
     $packageFiles = [ordered]@{
         $pluginName = $tempPlugin
-        'README.md' = Join-Path $PSScriptRoot 'README.md'
+        'README.md' = Join-Path $projectDir 'README.md'
         'LICENSE' = Join-Path $projectDir 'LICENSE'
-        'THIRD_PARTY_NOTICES.md' = $tempNotices
-        'ThirdParty/ColorPicker/LICENSE' = Join-Path $projectDir 'Source\Lib\ColorPicker\LICENSE'
-        'ThirdParty/RhythmControls/LICENSE' = Join-Path $projectDir 'Source\Lib\UI\LICENSE.RhythmControls.txt'
+        'THIRD_PARTY_NOTICES.md' = Join-Path $projectDir 'THIRD_PARTY_NOTICES.md'
+        'docs/home.png' = Join-Path $projectDir 'docs\home.png'
+        'docs/incoming.png' = Join-Path $projectDir 'docs\incoming.png'
+        'docs/notification.png' = Join-Path $projectDir 'docs\notification.png'
     }
-    # 配布ZIP内のライセンス配置へリンクを合わせる。開発用の原本は変更しない。
-    $notices = [IO.File]::ReadAllText((Join-Path $projectDir 'THIRD_PARTY_NOTICES.md'))
-    $notices = $notices.Replace('Source/Lib/ColorPicker/LICENSE', 'ThirdParty/ColorPicker/LICENSE')
-    $notices = $notices.Replace('Source/Lib/UI/LICENSE.RhythmControls.txt', 'ThirdParty/RhythmControls/LICENSE')
-    [IO.File]::WriteAllText($tempNotices, $notices, [Text.UTF8Encoding]::new($false))
     foreach ($file in $packageFiles.Values) {
         if (-not (Test-Path -LiteralPath $file -PathType Leaf)) { throw "Package file not found: $file" }
     }
@@ -104,7 +99,7 @@ try {
 finally {
     if ($ownsLock) { $lock.ReleaseMutex() }
     $lock.Dispose()
-    foreach ($tempPath in @($tempPlugin, $tempZip, $tempCatalog, $tempNotices)) {
+    foreach ($tempPath in @($tempPlugin, $tempZip, $tempCatalog)) {
         [IO.File]::Delete($tempPath)
     }
 }

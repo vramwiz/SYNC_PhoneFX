@@ -1,0 +1,102 @@
+[
+    {
+        "id":  "VRAMWIZ.SYNC_PHONEFX",
+        "name":  "スマホ演出",
+        "type":  "フィルタプラグイン",
+        "summary":  "電話・通知・アプリ起動など23種類のスマホ画面と効果音",
+        "description":  "https://raw.githubusercontent.com/vramwiz/SYNC_PhoneFX/refs/heads/main/README.md",
+        "author":  "VRAMの魔術師",
+        "repoURL":  "https://github.com/vramwiz/SYNC_PhoneFX/",
+        "licenses":  [
+                         {
+                             "type":  "GPL-3.0",
+                             "isCustom":  false,
+                             "copyrights":  [
+                                                {
+                                                    "years":  "2026",
+                                                    "holder":  "VRAMの魔術師"
+                                                }
+                                            ],
+                             "licenseBody":  null
+                         }
+                     ],
+        "tags":  [
+                     "スマホ",
+                     "電話",
+                     "通知",
+                     "効果音",
+                     "アニメーション"
+                 ],
+        "dependencies":  [
+
+                         ],
+        "images":  [
+
+                   ],
+        "installer":  {
+                          "source":  {
+                                         "direct":  null,
+                                         "github":  {
+                                                        "owner":  "vramwiz",
+                                                        "repo":  "SYNC_PhoneFX",
+                                                        "pattern":  "^SYNC_PhoneFX\\.zip$"
+                                                    }
+                                     },
+                          "install":  [
+                                          {
+                                              "action":  "download"
+                                          },
+                                          {
+                                              "action":  "extract"
+                                          },
+                                          {
+                                              "action":  "copy",
+                                              "from":  "{tmp}/SYNC_PhoneFX",
+                                              "to":  "{pluginsDir}/SYNC_PhoneFX"
+                                          }
+                                      ],
+                          "uninstall":  [
+                                            {
+                                                "action":  "delete",
+                                                "path":  "{pluginsDir}/SYNC_PhoneFX/SYNC_PhoneFX.auf2"
+                                            },
+                                            {
+                                                "action":  "delete",
+                                                "path":  "{pluginsDir}/SYNC_PhoneFX/README.md"
+                                            },
+                                            {
+                                                "action":  "delete",
+                                                "path":  "{pluginsDir}/SYNC_PhoneFX/LICENSE"
+                                            },
+                                            {
+                                                "action":  "delete",
+                                                "path":  "{pluginsDir}/SYNC_PhoneFX/THIRD_PARTY_NOTICES.md"
+                                            },
+                                            {
+                                                "action":  "delete",
+                                                "path":  "{pluginsDir}/SYNC_PhoneFX/docs/home.png"
+                                            },
+                                            {
+                                                "action":  "delete",
+                                                "path":  "{pluginsDir}/SYNC_PhoneFX/docs/incoming.png"
+                                            },
+                                            {
+                                                "action":  "delete",
+                                                "path":  "{pluginsDir}/SYNC_PhoneFX/docs/notification.png"
+                                            }
+                                        ]
+                      },
+        "version":  [
+                        {
+                            "version":  "v1.0.0",
+                            "release_date":  "2026-11-25",
+                            "file":  [
+                                         {
+                                             "path":  "{pluginsDir}/SYNC_PhoneFX/SYNC_PhoneFX.auf2",
+                                             "XXH3_128":  "43f88e5aee57c81454cf50702a6fc6d3"
+                                         }
+                                     ]
+                        }
+                    ]
+    }
+]
